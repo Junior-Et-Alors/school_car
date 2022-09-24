@@ -13,7 +13,7 @@ export default async function handler(req, res) {
                 const user = await User.findById(id); /* find all the data in our database */
                 res.status(200).json({ success: true, data: user });
             } catch (error) {
-                res.status(400).json({ success: false });
+                res.status(400).json({ success: false, error: error.message });
             }
             break;
         case "PUT":
@@ -25,7 +25,7 @@ export default async function handler(req, res) {
                 });
                 res.status(200).json({ success: true, data: updatedUser });
             } catch (error) {
-                res.status(400).json({ success: false });
+                res.status(400).json({ success: false, error: error.message });
             }
             break;
         case "DELETE":
