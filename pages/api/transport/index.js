@@ -29,7 +29,7 @@ export default async function handler(req, res) {
       }
       break;
     default:
-      res.status(400).json({ success: false });
+      res.status(400).json({ success: false, error: error.message });
       break;
   }
 }
