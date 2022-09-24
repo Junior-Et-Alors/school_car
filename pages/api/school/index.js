@@ -8,25 +8,23 @@ export default async function handler(req, res) {
 
     switch (method) {
         case "GET":
-        try {
-            const schools = await School.find({}); /* find all the data in our database */
-            res.status(200).json({ success: true, data: schools });
-        } catch (error) {
-            res.status(400).json({ success: false });
-        }
-        break;
+            try {
+                const schools = await School.find({}); /* find all the data in our database */
+                res.status(200).json({ success: true, data: schools });
+            } catch (error) {
+                res.status(400).json({ success: false, error: error.message });
+            }
+            break;
         case "POST":
-        try {
-            const pet = await School.create(
-            req.body
-            ); /* create a new model in the database */
-            res.status(201).json({ success: true, data: pet });
-        } catch (error) {
-            res.status(400).json({ success: false });
-        }
-        break;
+            try {
+                const school = await School.create(req.body);
+                res.status(201).json({ success: true, data: school });
+            } catch (error) {
+                res.status(400).json({ success: false, error: error.message });
+            }
+            break;
         default:
-        res.status(400).json({ success: false });
-        break;
+            res.status(400).json({ success: false, error: error.message });
+            break;
     }
 }
