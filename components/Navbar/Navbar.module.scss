@@ -1,0 +1,41 @@
+.navbarContainer{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5%;
+}
+
+.buttonContainer{
+  display: flex;
+  .loginButton{
+    z-index: 99;
+    background: #67568c;
+    color: white;
+    border: 1px solid #67568c;
+    transition: all 0.4s;
+    margin: auto 0;
+    &:hover{
+      background: transparent;
+      color: #67568c;
+      border: 1px solid #67568c;
+    }
+  }
+}
+
+
+.linksContainer{
+  display: flex;
+  gap: 100px;
+  a{
+    cursor: pointer;
+    &:hover{
+      color: #67568c;
+    }
+  }
+  .links{
+    list-style: none;
+    margin: auto 0;
+  }
+}
+
+
+
