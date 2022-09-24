@@ -17,12 +17,13 @@ export default async function handler(req, res) {
         break;
         case "POST":
         try {
-            const pet = await User.create(
+            console.log(req.body);
+            const user = await User.create(
             req.body
             ); /* create a new model in the database */
-            res.status(201).json({ success: true, data: pet });
+            res.status(201).json({ success: true, data: user });
         } catch (error) {
-            res.status(400).json({ success: false });
+            res.status(400).json({ success: false, error: error.message });
         }
         break;
         default:

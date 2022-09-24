@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 import { ObjectId } from "mongoose"
 
-/* PetSchema will correspond to a collection in your MongoDB database. */
+/* UserSchema will correspond to a collection in your MongoDB database. */
 const UserSchema = new mongoose.Schema({
   firstName: {
     type: String,
