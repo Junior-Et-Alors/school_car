@@ -18,9 +18,12 @@ const SchoolSchema = new mongoose.Schema({
     required: [true, 'Please provide a phone number.'],
     maxlenght: [20, 'Phone number cannot be more than 20 characters'],
   },
+  addressId: {
+    type: ObjectId,
+  },
   riderId: {
     type: [{ type: ObjectId }],
-    },
+  }
 })
 
 export default mongoose.models.School || mongoose.model('School', SchoolSchema)

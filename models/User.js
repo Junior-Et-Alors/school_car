@@ -27,6 +27,9 @@ const UserSchema = new mongoose.Schema({
     required: [true, 'Please provide a phone number.'],
     maxlenght: [20, 'Phone number cannot be more than 20 characters'],
   },
+  addressId: {
+    type: ObjectId,
+  },
   schoolId: {
     type: ObjectId,
     required: [true],
