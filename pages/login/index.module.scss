@@ -1,0 +1,77 @@
+.container{
+  height: 100vh;
+  display: flex;
+  .modalContainer{
+    width: 50%;
+    display: flex;
+    .modal{
+      p{
+        button{
+          padding: 5px 30px;
+          transition: all 0.4s;
+          &:hover{
+            background: #ff6e6c;
+            border-color: #ff6e6c ;
+            color: white;
+          }
+        }
+      }
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+      padding: 20px 150px;
+      border-radius: 6px;
+      text-align: center;
+      margin: auto;
+      h2{
+        margin-bottom: 60px;
+      }
+      form{
+        padding: 40px 0;
+        .buttonDark{
+          background: #1f1235;
+          color: white;
+          transition: all 0.2s;
+          &:hover{
+            background: #67568c;
+          }
+        }
+        input{
+          background: transparent;
+          border: 1px solid #1f1235;
+          border-radius: 6px;
+          padding: 16px 50px 16px 3px;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+  .image{
+    width: 50%;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://images.unsplash.com/photo-1509822929063-6b6cfc9b42f2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bG9naW58ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60");
+  }
+}
+
+.active-contenu{
+  display: block;
+}
+
+.formNames{
+  display: flex;
+  justify-content: space-between;
+  input{
+    width: 45%;
+  }
+}
+
+.fullWidth{
+  width: 100%;
+}
+
+.fullWidth::-webkit-inner-spin-button,
+.fullWidth::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+  display: none;
+}
