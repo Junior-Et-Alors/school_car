@@ -9,9 +9,7 @@ export default async function handler(req, res) {
   switch (method) {
     case "GET":
       try {
-        const transports = await Transport.find(
-          {}
-        ); /* find all the data in our database */
+        const transports = await Transport.find({});
         console.log(transports);
         res.status(200).json({ success: true, data: transports });
       } catch (error) {
@@ -20,9 +18,7 @@ export default async function handler(req, res) {
       break;
     case "POST":
       try {
-        const transport = await Transport.create(
-          req.body
-        ); /* create a new model in the database */
+        const transport = await Transport.create(req.body);
         res.status(201).json({ success: true, data: transport });
       } catch (error) {
         res.status(400).json({ success: false, error: error.message });

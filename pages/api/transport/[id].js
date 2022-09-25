@@ -9,34 +9,14 @@ export default async function handler(req, res) {
 
   switch (method) {
     case "GET":
-      // request for get all infos about one transport : transport,driver,travelers
-      const id = req.query.id;
-
       try {
+        const id = req.query.id;
         const transport = await Transport.findById(id);
-
-        if (!transport)
-          return res
-            .status(400)
-            .json({ success: false, error: "Not match for this Id!" });
-
-        const driver = await User.findById(transport.driverId);
-        const travelers = await User.find({
-          _id: { $in: transport.usersId },
-        });
-
-        const data = {
-          transport,
-          driver,
-          travelers,
-        };
-
-        res.status(200).json({ success: true, data });
+        res.status(200).json({ success: true, data: transport });
       } catch (error) {
         res.status(400).json({ success: false, error: error.message });
       }
       break;
-
     case "PUT":
       try {
         const id = req.query.id;
@@ -48,12 +28,6 @@ export default async function handler(req, res) {
             runValidators: true,
           }
         );
-
-        if (updateTransport == null)
-          return res
-            .status(400)
-            .json({ succes: false, error: "This transport doesn't exist" });
-
         res.status(200).json({ success: true, data: updateTransport });
       } catch (error) {
         res.status(400).json({ success: false, error: error.message });

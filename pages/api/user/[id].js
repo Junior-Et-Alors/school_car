@@ -10,7 +10,7 @@ export default async function handler(req, res) {
     case "GET":
       try {
         const id = req.query.id;
-        const user = await User.findById(id); /* find all the data in our database */
+        const user = await User.findById(id);
         res.status(200).json({ success: true, data: user });
       } catch (error) {
         res.status(400).json({ success: false, error: error.message });
