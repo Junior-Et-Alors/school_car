@@ -48,14 +48,28 @@ const userParsed = JSON.parse(user)
 				</div>
 				<SendMessage />
 			</div>
+			<footer className={styles.footer}>
+                <div className={styles.footerTitle}>
+                    <div >
+                        <h3>School Car, premier site de covoiturage scolaire en France</h3>
+                    </div>
+                    <div className={styles.footerLinks}>
+                        <li>Accueil</li>
+                        <li>Profil</li>
+                        <li>FAQ</li>
+                    </div>
+                </div>
+                <div className={styles.copyright}>
+                    <small>©School Car. Tous droits réservés</small>
+                </div>
+            </footer>
 		</>
 	)
 }
 
 export async function getServerSideProps(context) {
 	const userId = context.query.id;
-
-	console.log(userId)
+	
   await dbConnect()
 
   //await fetch('http://localhost:3000/api/user')

@@ -27,6 +27,8 @@
   gap: 100px;
   a{
     cursor: pointer;
+    text-decoration: none;
+    color: black;
     &:hover{
       color: #67568c;
     }

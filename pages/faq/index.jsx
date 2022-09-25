@@ -1,8 +1,11 @@
 import React from 'react'
 import styles from './index.module.scss'
+import Navbar from '../../components/Navbar/Navbar'
 
 const FAQ = () => {
 	return (
+		<>
+		<Navbar />
 		<div className={styles.faqContainer}>
 			<h1>FAQ</h1>
 
@@ -21,6 +24,7 @@ const FAQ = () => {
 				<p>Tu signes la décharge et on verra qui embarque tes gosses.</p>
 			</div>
 		</div>
+		</>
 	)
 }
 
