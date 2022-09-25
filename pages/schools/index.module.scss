@@ -10,7 +10,8 @@
 
 		.headerLeft {
 		flex: 0.5;
-		padding: 2rem;
+		width: 45%;
+		padding: 1rem;
 		background-color: #1f1235;
 		color: white;
 		border-radius: 10px;
@@ -18,22 +19,9 @@
 
 		.profilePic {
 			border: solid 1px white;
-			width: 90px;
-			height: 90px;
+			width: 150px;
 			border-radius: 10px;
-			margin: 1rem 1rem 1rem 0;
-			
-			&:hover {
-			background-color: #67568c;
-			transition: ease-in-out 0.2s;
-
-			&::after {
-			content: "Insérer une photo";
-			font-size: 10px;
-			color: #1f1235;
-			padding: 1rem;
-			}
-		}			
+			margin: 1rem;			
 		}
 
 		.nameAge {
@@ -43,14 +31,22 @@
 
 	.headerRight {
 		flex: 0.5;
-		padding: 2rem;
-		margin: 1rem;
 		border-radius: 7px;
 		background-color: transparent;
-		color: #1f1235;
+		background-size: cover;
+		width: 50%;
+		height: auto;
 		
-		h4 {
-			margin-top: 1.5rem;
+		.mapPicContainer {
+			margin-top: 2rem;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			.mapImg {
+				border-radius: 10px;
+				border: solid 1px white;
+			}
 		}
 	}
 	}
@@ -59,28 +55,32 @@
 		position: absolute;
 		display: flex;
 		width: 97%;
-		top: 22rem;
+		top: 23rem;
 		left: -1rem;
 		margin: 1rem;
 
 		.infoSection {
 		flex: 0.5;
-		margin: 1rem;
-		border-radius: 7px;
-		padding: 2rem;
+		margin: 2rem;
+		margin-top: 3.5rem;
+		margin-left: 2rem;
+		border-radius: 10px;
+		padding: 1rem;
+		color: #1f1235;
 
 		h3, p {
-			padding: 1rem;
+			padding: 0.5rem;
 		}
 	}
 
 		.stats {
 			flex: 0.5;
-			padding: 2rem;
+			padding: 1rem;
+			right: 1rem;
 			background-color: #67568c;
 			color: white;
-			border-radius: 7px;
-			margin: 1rem;
+			border-radius: 10px;
+			margin: 2.5rem;
 
 			.note {
 				padding: 1rem;
@@ -96,4 +96,116 @@
 			}
 		}
 	}
+
+	.drivers {
+		position: absolute;
+		top: 45rem;
+		width: 100%;
+		justify-content: space-between;
+		align-content: center;
+
+		h2 {
+			position: absolute;
+			top: -2.5rem;
+			width: 60%;
+			left: 15%;
+			color: #1f1235;
+			font-weight: bold;
+		}
+
+		.driversPart {
+			display: grid;
+			grid-row: auto;
+			width: 70%;
+			margin: 1rem 0 1rem 10%;
+			border-radius: 10px;
+
+			.link {
+				text-decoration: none;
+				color: black;
+
+				.driverInfo {	
+				display: flex;
+				justify-content: space-between;
+				padding: 0.5rem;
+				border: solid gray 1px;
+				background-color: #fbdd74;
+				border-radius: 10px;
+
+				h4 {
+					padding: 0.5rem;
+				}
+
+				p {
+					display: flex;
+					padding: 0.5rem;
+				}
+			}
+			}
+		}
+	}
 }
+	.footer{
+		position: absolute;
+		background-color: #eaeaea;
+		top: 56rem;
+		border: solid 1px lightgray;
+		width: 100%;
+		border-radius: 10px;
+
+		  .footerTitle{
+		    height: 100px;
+		    display: flex;
+		    margin: 20px;
+		    justify-content: space-between;
+		  }
+		  .footerLinks{
+		    list-style: none;
+		    display: flex;
+		    gap: 20px;
+		  }
+		  .copyright{
+		    background: #1f1235;
+		    color: white;
+		    text-align: center;
+		    padding: 20px 0;
+		  }
+		}
+
+@media only screen and (max-width: 1000px) {
+  .firstSection {
+    .title {
+           h1 {
+        font-size: 4rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 550px) {
+
+		.topPart {
+			margin: 0.5rem;
+
+			.headerLeft {
+				padding: 0.5rem;
+				margin: 0.5rem;
+
+				.profilePic {
+					margin: 0;
+				}
+			}
+		}
+
+
+	  .bottomPart {
+	  	.infoSection {
+	  		margin: 0.5rem;
+	  		margin-top: 3rem;
+	  	}
+	    .stats {
+	           padding: 0.5rem;
+	           margin: 0.5rem;
+	    }
+	  }
+	}
