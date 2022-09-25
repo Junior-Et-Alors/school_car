@@ -1,0 +1,24 @@
+.btnContainer {
+	position: absolute;
+	top: 40.4rem;
+	display: flex;
+	width: 100%;
+	height: auto;
+	justify-content: center;
+
+	button {
+		width: 70%;
+		height: auto;
+		background-color: #ff6e6c;
+		font-weight: semibold;
+		border: none;
+		border-radius: 10px;
+
+		&:hover {
+			background-color: #1f1235;
+			color: #fff;
+			transition: ease-in-out 0.2s;
+
+		}
+	}
+}
