@@ -75,3 +75,20 @@
   margin: 0;
   display: none;
 }
+
+.noArrow::-webkit-inner-spin-button,
+.noArrow::-webkit-outer-spin-button{
+  -webkit-appearance: none;
+  margin: 0;
+  display: none;
+}
+
+.selectSchool{
+  background: transparent;
+  border: 1px solid #1f1235;
+  border-radius: 6px;
+  padding: 16px 50px 16px 3px;
+  margin-bottom: 30px;
+  width: 100%;
+
+}
