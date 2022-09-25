@@ -13,7 +13,6 @@ import homePic4 from "../public/assets/homePic4.png"
 import homePic5 from "../public/assets/homePic5.png"
 import homePic6 from "../public/assets/homePic6.png"
 
-
 export default function HomePage({schools}) {
 
     const schoolParsed = JSON.parse(schools)
@@ -44,7 +43,6 @@ export default function HomePage({schools}) {
                             </select>
                                 <button type="submit">Lancer la recherche</button>
                         </div>
-                        
                 </div>
             </section>
 
@@ -78,7 +76,6 @@ export default function HomePage({schools}) {
                         <h3>Vos enfants peuvent faire du covoiturage en toute confiance !</h3>
                         <Image src={homePic6} width={450} height={300} />
                     </div>
-
                 </div>
             </section>
 
@@ -102,18 +99,14 @@ export default function HomePage({schools}) {
 }
 
 export async function getServerSideProps() {
-
   await dbConnect()
-
   const result = await School.find({})
   const schools = result.map((school) => {
     return school.toObject()
   })
-
   schools.forEach((school) => {
     school._id = school._id.toString()
     })
-
   return { 
     props: { 
         schools: JSON.stringify(schools)
